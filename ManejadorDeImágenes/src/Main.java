@@ -8,8 +8,6 @@ public class Main {
         ImageController imageController = new ImageController();
 
         try {
-
-            imageController.recuperarImg(3,3);
             imageController.addImage(1);
         } catch (IOException e) {
             e.printStackTrace();

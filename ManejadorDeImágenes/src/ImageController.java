@@ -3,7 +3,6 @@ import Ficheros.Archivo;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
-import java.awt.image.ColorModel;
 import java.awt.image.CropImageFilter;
 import java.awt.image.FilteredImageSource;
 import java.io.*;
@@ -42,14 +41,14 @@ public class ImageController extends JPanel {
         for(int i=3; i< arrayList.size(); i++){
             completeArray = addByte(completeArray, arrayList.get(i).byteValue());
         }
-        bytesToimage(5);
-        deleteImage("aux.png");
+        bytesToimage(1,3,2);
+        //deleteImage("aux.png");
 
     }
 
     public void loadImage(String ruta) throws IOException {
 
-        imagenPrincipal = ImageIO.read(new File("aux.png"));
+        imagenPrincipal = ImageIO.read(new File("img.png"));
 
         width = imagenPrincipal.getWidth(null);
         height = imagenPrincipal.getHeight(null);
@@ -67,7 +66,6 @@ public class ImageController extends JPanel {
     }
 
     public void saveImages() throws IOException {
-
 
         switch (contParidad) {
             case 1: {
@@ -160,7 +158,7 @@ public class ImageController extends JPanel {
         }
     }
 
-    public void bytesToimage(int id) throws IOException {
+    public void bytesToimage(int id, int name, int piece) throws IOException {
 
         if(id==1){
             InputStream in = new ByteArrayInputStream(byteArray1);
@@ -187,15 +185,16 @@ public class ImageController extends JPanel {
             InputStream in = new ByteArrayInputStream(newArray);
             BufferedImage bImageFromConvert = ImageIO.read(in);
 
+            String path = rutaDiscoMasVacio() + name + "-" + piece + ".png";
             ImageIO.write(bImageFromConvert, "png", new File(
-                    "recuperada.png"));
+                    path));
         }
         else {
             InputStream in = new ByteArrayInputStream(completeArray);
             BufferedImage bImageFromConvert = ImageIO.read(in);
 
             ImageIO.write(bImageFromConvert, "png", new File(
-                    "aux.png"));
+                    "completa.png"));
         }
     }
 
@@ -230,6 +229,19 @@ public class ImageController extends JPanel {
         String ruta1 = searchFile(name+"-1.png", 1);
         String ruta2 = searchFile(name+"-2.png", 1);
         String ruta3 = searchFile(name+"-3.png", 1);
+
+        if(ruta1 == ""){
+            recuperarImg(name,1);
+            ruta1 = searchFile(name+"-1.png", 1);
+        }
+        else if(ruta2 == ""){
+            recuperarImg(name,2);
+            ruta2 = searchFile(name+"-2.png", 1);
+        }
+        else if(ruta3 == ""){
+            recuperarImg(name,3);
+            ruta3 = searchFile(name+"-3.png", 1);
+        }
 
         BufferedImage uno= ImageIO.read(new File(ruta1));
         BufferedImage dos = ImageIO.read(new File(ruta2));
@@ -306,10 +318,11 @@ public class ImageController extends JPanel {
             archivo.escribir(nombre, contParidad, tam1, tam2, tam3, parityArray);
         }
         contParidad--;
-
     }
+
+
     public void recuperarImg(int name, int id) throws IOException {
-        System.out.println("RECUPERANDO");
+        System.out.println("RECUPERANDO...");
         parityArray = new byte[0];
 
         String ruta1;
@@ -422,7 +435,7 @@ public class ImageController extends JPanel {
                 }
             }
         }
-        bytesToimage(4);
+        bytesToimage(4, name, id);
 
     }
     public int middleOfThree(int a, int b, int c)
@@ -475,15 +488,52 @@ public class ImageController extends JPanel {
             }
         }
         else{
-            return null;
+            return "";
+        }
+
+    }
+
+    private String rutaDiscoMasVacio() {
+        int smallDisk;
+        int tamDisco1;
+        int tamDisco2;
+        int tamDisco3;
+        int tamDisco4;
+
+        String disco1 = "DISCO1/";
+        String disco2 = "DISCO2/";
+        String disco3 = "DISCO3/";
+        String disco4 = "DISCO4/";
+        File folder = new File(disco1);
+        File[] listOfFiles = folder.listFiles();
+        tamDisco1 = listOfFiles.length;
+
+        folder = new File(disco2);
+        listOfFiles = folder.listFiles();
+        tamDisco2 = listOfFiles.length;
+
+        folder = new File(disco3);
+        listOfFiles = folder.listFiles();
+        tamDisco3 = listOfFiles.length;
+
+        folder = new File(disco4);
+        listOfFiles = folder.listFiles();
+        tamDisco4 = listOfFiles.length;
+
+        smallDisk = Math.min(Math.min(tamDisco1, tamDisco2), Math.min(tamDisco3, tamDisco4));
+
+        if(tamDisco1 == smallDisk){
+            return  disco1;
+        }
+        else if(tamDisco2 == smallDisk){
+            return disco2;
+        }
+        else if(tamDisco3 == smallDisk) {
+            return disco3;
+        }
+        else{
+            return  disco4;
         }
 
     }
 }
-
-/*
-<a href='http://www.freepik.es/vector-gratis/burbuja-de-texto-wow_1111599.htm'>Designed by Freepik</a>
-<a href="http://www.freepik.es/vector-gratis/burbuja-de-texto-wow_1111599.htm">Diseñado por Freepik</a>
-https://opengameart.org/users/heindalwesnoth
-*/
-
