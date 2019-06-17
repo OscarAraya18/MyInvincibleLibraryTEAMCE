@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>VentanaImagenes</class>
+ <widget class="QWidget" name="VentanaImagenes">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>900</width>
+    <height>563</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QLabel" name="fondoI">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>900</width>
+     <height>563</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="volverButton">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>70</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Noto Sans Adlam</family>
+     <weight>75</weight>
+     <italic>true</italic>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>volver</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="seleccionarImagenButton">
+   <property name="geometry">
+    <rect>
+     <x>350</x>
+     <y>10</y>
+     <width>200</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Noto Sans Adlam</family>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <italic>true</italic>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>seleccionar imagen</string>
+   </property>
+  </widget>
+  <widget class="QGraphicsView" name="visorImagenes">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>90</y>
+     <width>500</width>
+     <height>300</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="guardarButton">
+   <property name="geometry">
+    <rect>
+     <x>700</x>
+     <y>430</y>
+     <width>100</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Noto Sans Adlam</family>
+     <weight>75</weight>
+     <italic>true</italic>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>guardar </string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="nombreImagen">
+   <property name="geometry">
+    <rect>
+     <x>450</x>
+     <y>430</y>
+     <width>200</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Noto Sans Adlam</family>
+     <weight>75</weight>
+     <italic>true</italic>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="maxLength">
+    <number>50</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="nombreLabel">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>440</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Noto Sans Adlam</family>
+     <pointsize>11</pointsize>
+     <weight>75</weight>
+     <italic>true</italic>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>Nombre</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="listaGalerias">
+   <property name="geometry">
+    <rect>
+     <x>169</x>
+     <y>430</y>
+     <width>161</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Noto Sans Adlam</family>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <italic>true</italic>
+     <bold>true</bold>
+    </font>
+   </property>
+  </widget>
+  <widget class="QLabel" name="nombreLabel_2">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>440</y>
+     <width>80</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Noto Sans Adlam</family>
+     <pointsize>11</pointsize>
+     <weight>75</weight>
+     <italic>true</italic>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>Galería</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

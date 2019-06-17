@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ventanaMetadata</class>
+ <widget class="QWidget" name="ventanaMetadata">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>900</width>
+    <height>563</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QLabel" name="fondoM">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>900</width>
+     <height>564</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="editorCodigo">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>100</y>
+     <width>800</width>
+     <height>300</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Noto Sans Gurmukhi</family>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="volverButton">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>70</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Noto Sans Adlam</family>
+     <pointsize>9</pointsize>
+     <weight>75</weight>
+     <italic>true</italic>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>volver</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="ejecutarButton">
+   <property name="geometry">
+    <rect>
+     <x>400</x>
+     <y>450</y>
+     <width>100</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Noto Sans Adlam</family>
+     <weight>75</weight>
+     <italic>true</italic>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>ejecutar</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="commitButton">
+   <property name="geometry">
+    <rect>
+     <x>730</x>
+     <y>0</y>
+     <width>70</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Noto Sans Adlam</family>
+     <weight>75</weight>
+     <italic>true</italic>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>commit</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="rollbackButton">
+   <property name="geometry">
+    <rect>
+     <x>830</x>
+     <y>0</y>
+     <width>70</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Noto Sans Adlam</family>
+     <weight>75</weight>
+     <italic>true</italic>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>rollback</string>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="discos">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>0</y>
+     <width>71</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Noto Sans Adlam</family>
+     <pointsize>13</pointsize>
+     <weight>75</weight>
+     <italic>true</italic>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="minimum">
+    <number>1</number>
+   </property>
+   <property name="maximum">
+    <number>4</number>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="discoButton">
+   <property name="geometry">
+    <rect>
+     <x>400</x>
+     <y>0</y>
+     <width>100</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Noto Sans Adlam</family>
+     <weight>75</weight>
+     <italic>true</italic>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>Eliminar Disco</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

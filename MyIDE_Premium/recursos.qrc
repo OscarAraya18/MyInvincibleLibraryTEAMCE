@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/recursos">
+        <file>imagenes/fondoP.jpg</file>
+        <file>imagenes/L.ico</file>
+        <file>imagenes/dino.png</file>
+        <file>imagenes/dino3.png</file>
+    </qresource>
+    <qresource prefix="/archivos"/>
+</RCC>
