@@ -1,8 +1,21 @@
 import java.util.*;
 
-
+/**
+ * Clase que se encarga de la compresión de la metadata por medio del método de Huffman
+ *
+ */
 public class CompresionHuffman {
+	
+	/**
+	 * Clase que se encarga de definir los elementos dentro del arbol de compresion de Huffman
+	 *
+	 */
 	public class ElementosCompresion{
+		/**
+		 * Constructor de la clase ElementosCompresion
+		 * @param caracter Caracter asociado a ese elemento dentro del arbol de compresion de Huffman
+		 * @param frecuencia Frecuencia con la que aparace dicho caracter dentro del encripting de Huffman
+		 */
 		public ElementosCompresion(char caracter, int frecuencia) {
 			this.caracter = caracter;
 			this.frecuencia = frecuencia;
@@ -13,11 +26,12 @@ public class CompresionHuffman {
 
 		}
 		
+		/**
+		 * Atributos que hacen posible la implementación del algoritmo de compresion de Huffman
+		 */
 		char caracter;
 		int frecuencia;
 		String valorBinario;
-		
-		
 		
 		ElementosCompresion hijoIzquierdo;
 		ElementosCompresion hijoDerecho;
@@ -30,8 +44,16 @@ public class CompresionHuffman {
 	
 	
 	
-	
+	/**
+	 * Clase encargada de establecer la estructura del arbol de compresion de Huffman
+	 *
+	 */
 	public class ArbolBinarioCompresion{
+		/**
+		 * Constructor de la clase ArbolBinarioCompresion
+		 * @param listaElementos ArrayList que almacena todos los ElementosCompresion del string a comprimir
+		 * @param datoOriginal
+		 */
 		public ArbolBinarioCompresion(ArrayList<ElementosCompresion> listaElementos, String datoOriginal) {
 			this.listaElementos = listaElementos;
 			this.datoOriginal = datoOriginal;
@@ -41,6 +63,10 @@ public class CompresionHuffman {
 			desencriptado = "";
 		}
 		
+		/**
+		 * Metodo que se encarga de formar el arbol de Huffman con los ElementosDeCompresion
+		 * @param listaEstadoActual ArrayList que contiene los elementos actuales
+		 */
 		public void calculoArbol(ArrayList<ElementosCompresion> listaEstadoActual) {
 			ElementosCompresion padre = new ElementosCompresion(' ',0);
 			while(listaEstadoActual.size()!=1) {
@@ -84,7 +110,9 @@ public class CompresionHuffman {
 				
 		}
 		
-		
+		/**
+		 * Metodo que se encarga de encriptar el String como un numero binario
+		 */
 		public void encriptarArbol() {
 			ElementosCompresion elementoAuxiliar;
 			ElementosCompresion padre;
@@ -120,7 +148,9 @@ public class CompresionHuffman {
 		}
 		
 		
-		
+		/**
+		 * Metodo que se encarga de desencriptar las palabras con la utilización del arbol previamente creado
+		 */
 		public void desencriptarArbol() {
 			//System.out.println(resultado);
 			String auxiliar = resultado;
@@ -153,11 +183,12 @@ public class CompresionHuffman {
 		
 		
 		
-
-	
-	
-	
-	
+	/**
+	 * Algoritmo de ordenamiento de tipo BubbleSort que ordena los elementos de compresión según su frecuencia de 
+	 * aparición dentro del string a encriptar
+	 * @param listaElementos ArrayList de ElementosCompresion que forman parte del string a encriptar
+	 * @return
+	 */
 	public ArrayList<ElementosCompresion> ordenarListaPorFrecuencia(ArrayList<ElementosCompresion> listaElementos) { 
 		ElementosCompresion elementoAuxiliar = new ElementosCompresion(' ',0);
 		
@@ -173,14 +204,18 @@ public class CompresionHuffman {
 				}
 			}
 			listaElementos.get(i).contadorArbol = listaElementos.get(i).frecuencia;
-;
 		}
 		return listaElementos;
 	}
 	
 	
 	
-	
+	/**
+	 * Metodo que se encarga de verificar si un elemento de compresión existe
+	 * @param listaElementos ArrayList de ElementosCompresion que forman parte del string a encriptar
+	 * @param caracterBuscado ElementoCompresion que contiene el caracter buscado
+	 * @return
+	 */
 	public boolean buscarEnLista(ArrayList<ElementosCompresion> listaElementos, char caracterBuscado) {
 		for(int i=0; i<listaElementos.size(); i++) {
 			if(listaElementos.get(i).caracter == caracterBuscado) {
@@ -192,6 +227,10 @@ public class CompresionHuffman {
 	}
 	
 	
+	/**
+	 * Metodo que se encarga de mostrar al usuario el funcionamiento de Huffman
+	 * @param listaElementos ArrayList de ElementosCompresion que forman parte del string a encriptar
+	 */
 	public void mostrarFrecuencia(ArrayList<ElementosCompresion> listaElementos) {
 		for(int i=0; i<listaElementos.size(); i++) {
 			//System.out.println("El elemento " + listaElementos.get(i).caracter + " aparece " + listaElementos.get(i).frecuencia + " veces");
@@ -205,6 +244,10 @@ public class CompresionHuffman {
 	}
 	
 	
+	/**
+	 * Constructor de la CompresionHuffman que se encarga de encriptar un string por medio del método de compresión de Huffman
+	 * @param datoComprimir String a comprimir
+	 */
 	public CompresionHuffman(String datoComprimir){
 		ArrayList<ElementosCompresion> listaElementos = new ArrayList<ElementosCompresion>();
 		ElementosCompresion elemento;
